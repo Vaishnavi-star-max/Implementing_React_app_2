@@ -7,6 +7,9 @@ import './Dashboard.css'; // Optional: Import CSS for styling
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const handleAddMovieClick = () => {
+    navigate('/add-movie');
+  };
 
   // Sample movie data. In a real application, this might come from an API or global state.
   const [movies, setMovies] = useState([
@@ -37,6 +40,7 @@ const Dashboard = () => {
         <h1>Movie Collection</h1>
       </header>
       <div className="movie-list">
+      <button onClick={handleAddMovieClick}>Add Movie</button>
         {movies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
